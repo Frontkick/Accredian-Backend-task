@@ -1,3 +1,4 @@
+```markdown
 # 🚀 Refer & Earn Backend
 
 Welcome to the backend service for the Refer & Earn application! This service handles user referrals and notifications using a robust stack of modern technologies.
@@ -13,43 +14,43 @@ Welcome to the backend service for the Refer & Earn application! This service ha
 - **Mailgen** - For generating email templates
 - **Nodemon** - For automatic server restarts
 - **Dotenv** - For managing environment variables
+- **Docker** - For containerization and easy deployment
 
 ## 📦 Setup Instructions
 
-1. **Clone the repository**
-    ```bash
-    git clone https://github.com/Chandan8018/AccredianBackend.git
-    cd AccredianBackend
-    ```
+### 1. **Clone the repository**
+```bash
+git clone https://github.com/Frontkick/Accredian-Backend-task
+cd Accredian-Backend-task
+```
 
-2. **Backend Setup**
-    ```bash
-    npm install
-    ```
+### 2. **Backend Setup**
+```bash
+npm install
+```
 
-3. **Environment Variables**
-    - Create a `.env` file in the root directory and add your MySQL URI, EMAIL, and other necessary environment variables.
+### 3. **Environment Variables**
+- Create a `.env` file in the root directory and add the following:
+```bash
+DATABASE_URL="mysql://userName:password@localhost:3306/refer"
+EMAIL="yourmail@gmail.com"
+PASSWORD="passwor"
+PORT=1234
+```
 
-4. **.env**    
-    ```bash
-    DATABASE_URL="mysql://userName:password@localhost:3306/refer_and_earn"
-    EMAIL="name@gmail.com"
-    PASSWORD="zhdwrvnm*****"
-    PORT=1234
-    ``` 
+### 4. **Run Prisma migrations**
+```bash
+npx prisma migrate dev
+```
 
-5. **Run Prisma migrations**
-    ```bash
-    npx prisma migrate dev
-    ``` 
+### 5. **Start the server**
+```bash
+npm run dev
+```
 
-6. **Start the server**
-    ```bash
-    npm run dev
-    ``` 
-    
-## Folder Structure
 
+
+## 📂 Folder Structure
 ```sh
 .
 ├── src
@@ -64,4 +65,14 @@ Welcome to the backend service for the Refer & Earn application! This service ha
 ├── .env
 ├── package.json
 └── tsconfig.json
+```
+
+## 🐳 Docker Implementation
+This project includes Docker support for easy deployment:
+```bash
+# Build the image
+docker build -t refer .
+
+# Run the container
+docker run -p 5000:5000 refer
 ```
